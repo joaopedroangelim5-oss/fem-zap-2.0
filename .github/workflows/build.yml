@@ -24,6 +24,9 @@ jobs:
           sed -i 's#android:label="[^"]*"#android:label="Fem-Zap"#' $M
           sed -i 's/minSdk = flutter.minSdkVersion/minSdk = 26/; s/minSdkVersion flutter.minSdkVersion/minSdkVersion 26/' android/app/build.gradle* || true
       - run: flutter pub get
+      - name: Ajustar compileSdk dos plugins
+        run: |
+          find $HOME/.pub-cache/hosted/pub.dev -path '*/android/build.gradle' -exec sed -i -E 's/(compileSdk(Version)?[ =]+)(2[0-9]|3[0-5])/\136/' {} +
       - run: dart run flutter_launcher_icons
       - run: flutter build apk --release
       - uses: actions/upload-artifact@v4
