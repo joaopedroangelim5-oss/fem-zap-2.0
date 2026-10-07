@@ -1,0 +1,29 @@
+name: femzap
+description: Fem-Zap - mensagens sem internet
+publish_to: none
+version: 1.0.0+1
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+dependencies:
+  flutter:
+    sdk: flutter
+  nearby_connections: ^4.0.0
+  shared_preferences: ^2.2.0
+  image_picker: ^1.0.7
+  gal: ^2.3.0
+  path_provider: ^2.1.0
+  permission_handler: ^11.3.1
+  file_picker: ^8.0.0
+  open_file: ^3.5.10
+  archive: ^3.6.1
+  crypto: ^3.0.3
+dev_dependencies:
+  flutter_launcher_icons: ^0.13.1
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/logo.png
+flutter_launcher_icons:
+  android: true
+  ios: false
+  image_path: assets/logo.png
